@@ -1,7 +1,7 @@
 import { AppProps } from 'next/app';
 import Link from 'next/link'
 import Head from 'next/head';
-import { MantineProvider } from '@mantine/core';
+import { ActionIcon, Divider, MantineProvider, Modal, Textarea, TextInput } from '@mantine/core';
 import { useState } from 'react'
 import {
     AppShell as Shell,
@@ -30,7 +30,9 @@ import {
     Hourglass,
     CashBanknote,
     BrandGoogle,
-    Sunrise
+    Sunrise,
+    Mail,
+    Send
 } from 'tabler-icons-react';
 
 export default function App(props) {
@@ -63,6 +65,7 @@ export default function App(props) {
 
   //Active state
 
+  const [emailOpened, setEmailOpened] = useState(false)
   
 
   return (
@@ -154,7 +157,16 @@ export default function App(props) {
                 setColorScheme('light')
             }
         }} color={'dark'}><Sunrise></Sunrise></Button>
-            <Button>Call Us</Button>
+            <Button variant='gradient' gradient={{from: 'red', to: 'blue', deg: 180}}>Call Us</Button>
+            <Modal centered color='dark' onClose={()=>{setEmailOpened(false)}} opened={emailOpened} title='Send us an Email (Free)'>
+              <form action="https://formsubmit.co/aireenhermosilla@icloud.com" method="POST">
+                <TextInput name='Email' label='Email' placeholder='We will use this to get back to you.'></TextInput>
+                <Textarea minRows={10} name='Message' label='Body' placeholder='Required'></Textarea>
+                <br></br>
+                <Group position='right'>Send<ActionIcon type='submit' radius={'lg'} variant='outline'><Send size={16}></Send></ActionIcon></Group>
+              </form>
+            </Modal>
+            <Button variant='gradient' gradient={{from: 'orange', to: 'blue'}} onClick={()=>{setEmailOpened(true)}}>Mail Us</Button>
         </Group>
         </Footer>
       }
