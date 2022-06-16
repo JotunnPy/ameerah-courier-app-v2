@@ -37,7 +37,13 @@ export default function App(props) {
     
   const { Component, pageProps } = props;
   const theme = useMantineTheme();
+
+  // Opened State
+
   const [opened, setOpened] = useState(false);
+
+//Loading State
+
   const [homeLoading, setHomeLoading] = useState(false)
   const [aboutLoading, setAboutLoading] = useState(false)
   const [contactLoading, setContactLoading] = useState(false)
@@ -46,12 +52,16 @@ export default function App(props) {
 
   const [colorScheme, setColorScheme] = useState('light')
 
+  //Variant State
+
   const [homeColor, setHomeColor] = useState("outline")
   const [aboutColor, setAboutColor] = useState("outline")
   const [contactColor, setContactColor] = useState("outline")
   const [pricingColor, setPricingColor] = useState("outline")
   const [FAQColor, setFAQColor] = useState("outline")
   const [googleColor, setGoogleColor] = useState('gradient')
+
+  //Active state
 
   
 
@@ -81,40 +91,45 @@ export default function App(props) {
       navbar={
         <Navbar p="md" hiddenBreakpoint="sm" hidden={!opened} width={{ sm: 150, lg: 250 }}>
           <Stack spacing={'xs'}>
-          <Link href={'/'}>
+          <Link scroll={false} href={'/'}>
           <Button leftIcon={<Home></Home>} onMouseLeave={()=>{setHomeColor('outline')}} onMouseEnter={()=>{setHomeColor('gradient')}} loading={homeLoading} onClick={()=> {
             setHomeLoading(true)
+            setOpened(false)
             setTimeout(()=>{
                 setHomeLoading(false)
             }, 300)
           }} variant={homeColor} gradient={{ from: 'teal', to: 'lime', deg: 105 }}>Home</Button>
           </Link>
-          <Link href='/about'>
+          <Link scroll={false} href='/about'>
           <Button onMouseLeave={()=>{setAboutColor('outline')}} onMouseEnter={()=>{setAboutColor('gradient')}} loading={aboutLoading} onClick={()=>{
             setAboutLoading(true)
+            setOpened(false)
             setTimeout(()=>{
                 setAboutLoading(false)
             }, 300)
           }} leftIcon={<QuestionMark />} variant={aboutColor} gradient={{ from: '#ed6ea0', to: '#ec8c69', deg: 35 }}>About</Button>
           </Link>
-          <Link href={'/contact'}>
+          <Link scroll={false} href={'/contact'}>
           <Button onMouseLeave={()=>{setContactColor('outline')}} onMouseEnter={()=>{setContactColor('gradient')}} loading={contactLoading} onClick={()=>{
             setContactLoading(true)
+            setOpened(false)
             setTimeout(()=>{
                 setContactLoading(false)
             }, 300)
           }}  leftIcon={<Phone/>} variant={contactColor} gradient={{ from: 'indigo', to: 'cyan' }}>Contact</Button></Link>
-          <Link href={'/faq'}>
+          <Link scroll={false} href={'/faq'}>
           <Button onMouseLeave={()=>{setFAQColor('outline')}} onMouseEnter={()=>{setFAQColor('gradient')}} loading={FAQLoading} onClick={()=>{
+            setOpened(false)
             setFAQLoading(true)
             setTimeout(()=>{
                 setFAQLoading(false)
             }, 300)
           }}  leftIcon={<Hourglass/>} variant={FAQColor} gradient={{ from: 'orange', to: 'red' }}>F.A.Q</Button>
           </Link>
-          <Link href={'/pricing'}>
+          <Link scroll={false} href={'/pricing'}>
           <Button onMouseLeave={()=>{setPricingColor('outline')}} onMouseEnter={()=>{setPricingColor('gradient')}} loading={pricingLoading} onClick={()=>{
             setPricingLoading(true)
+            setOpened(false)
             setTimeout(()=>{
                 setPricingLoading(false)
             }, 300)
