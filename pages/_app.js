@@ -166,7 +166,7 @@ export default function App(props) {
                 <Group position='right'>Send<ActionIcon type='submit' radius={'lg'} variant='outline'><Send size={16}></Send></ActionIcon></Group>
               </form>
             </Modal>
-            <Button variant='gradient' gradient={{from: 'orange', to: 'blue'}} onClick={()=>{setEmailOpened(true)}}>Mail Us</Button>
+            <Button variant='gradient' gradient={{from: 'red', to: 'blue'}} onClick={()=>{setEmailOpened(true)}}>Mail Us</Button>
         </Group>
         </Footer>
       }
