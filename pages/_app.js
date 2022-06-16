@@ -76,15 +76,10 @@ export default function App(props) {
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          /** Put your mantine theme override here */
           colorScheme: colorScheme,
         }}
       >
-    <Shell styles={{
-        main: {
-          background: theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
-        },
-      }}
+    <Shell
       navbarOffsetBreakpoint="sm"
       asideOffsetBreakpoint="sm"
       fixed
