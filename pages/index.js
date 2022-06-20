@@ -1,5 +1,5 @@
 import { Group, SimpleGrid, Title, Text, Image, Card, useMantineTheme as MantineTheme, Badge, BackgroundImage, Stack , Modal, Button} from '@mantine/core'
-import {useState, useEffect} from 'react'
+import {useState as UseState, useEffect as UseEffect} from 'react'
 import TextTransition, {presets} from 'react-text-transition'
 import AAnnouncement from '../Components/AAnnouncement'
 import ACard from '../Components/ACard'
@@ -14,9 +14,9 @@ const TEXTS = [
 function index() {
   const theme = MantineTheme()
 
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = UseState(0)
 
-  useEffect(() => {
+  UseEffect(() => {
     const intervalId = setInterval(() =>
       setIndex(index => index + 1),
       3000 // every 3 seconds
@@ -24,7 +24,7 @@ function index() {
     return () => clearTimeout(intervalId);
   }, []);
 
-  const [o, setO] = useState(false)
+  const [o, setO] = UseState(false)
   return (
     <div>
       <Group position='apart'><Title style={{marginBottom: 10}}>Home</Title>
