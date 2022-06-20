@@ -1,10 +1,10 @@
-import { CardSection, Group, SimpleGrid, Title, Text, Image, Card, useMantineTheme, Badge, BackgroundImage, Stack } from '@mantine/core'
+import { CardSection, Group, SimpleGrid, Title, Text, Image, Card, useMantineTheme as MantineTheme, Badge, BackgroundImage, Stack } from '@mantine/core'
 import React from 'react'
 import ACard from '../Components/ACard'
 import ALinkButton from '../Components/ALinkButton'
 
 function index() {
-  const theme = useMantineTheme()
+  const theme = MantineTheme()
   return (
     <div>
       <Title style={{marginBottom: 10}}>Home</Title>
