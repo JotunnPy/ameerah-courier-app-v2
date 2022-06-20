@@ -1,20 +1,60 @@
-import { CardSection, Group, SimpleGrid, Title, Text, Image, Card, useMantineTheme as MantineTheme, Badge, BackgroundImage, Stack } from '@mantine/core'
-import React from 'react'
+import { Group, SimpleGrid, Title, Text, Image, Card, useMantineTheme as MantineTheme, Badge, BackgroundImage, Stack , Modal, Button} from '@mantine/core'
+import React, { useState, useEffect } from 'react'
+import TextTransition, {presets} from 'react-text-transition'
+import AAnnouncement from '../Components/AAnnouncement'
 import ACard from '../Components/ACard'
 import ALinkButton from '../Components/ALinkButton'
 
+const TEXTS = [
+  "Fast",
+  "Hassle-Free", 
+  "Reasonably Priced"
+];
+
 function index() {
   const theme = MantineTheme()
+
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    const intervalId = setInterval(() =>
+      setIndex(index => index + 1),
+      3000 // every 3 seconds
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
+  const [o, setO] = useState(false)
   return (
     <div>
-      <Title style={{marginBottom: 10}}>Home</Title>
-      <SimpleGrid cols={1} style={{marginBottom: 5}}>
+      <Group position='apart'><Title style={{marginBottom: 10}}>Home</Title>
+      <Modal  onClose={()=>setO(false)} opened={o}>
+        <Title style={{marginBottom: 10}}>Announcements</Title>
+        <AAnnouncement  textTitle={'Website Release'} badgeTitle={'Info'} badgeColor={'blue'} addInfo={
+          <Text size='sm'>Date: 20/06/22</Text>
+        } />
+      </Modal>
+      <Button color={'yellow'} variant={'filled'} onClick={()=>{setO(true)}}>Announcements</Button>
+      </Group>
+      <Card shadow={'lg'} style={{marginBottom: 10}}>
+      <Stack spacing='xs'>
+      <Title style={{color: 'green'}} order={1}>
+      <TextTransition inline springConfig={presets.wobbly}>
+      {TEXTS[index % TEXTS.length]}
+      </TextTransition>
+      </Title>
+      <Title style={{color: 'green'}} order={1}>
+      {" Delivery Service"}
+      </Title>
+      </Stack>
+      </Card>
+      <SimpleGrid cols={1} style={{marginBottom: 15}}>
         <ACard Body={
           <>
           <Card.Section>
             <Image src={'https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'} />
           </Card.Section>
-          <Group position='apart' style={{marginBottom: 5, marginTop: theme.spacing.sm}}>
+          <Group position='apart' style={{marginBottom: 15, marginTop: theme.spacing.sm}}>
             <Text weight={500}>Get to know us!</Text>
             <Badge color={'blue'} variant='light'>About Us</Badge>
           </Group>
@@ -45,7 +85,8 @@ function index() {
         <BackgroundImage radius={20} src={'https://images.unsplash.com/photo-1512909006721-3d6018887383?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'}></BackgroundImage>
         <Stack spacing={'sm'}>
         <Card shadow={'md'}>
-            <Text color={'green'} align='center'>Pricing</Text>
+          
+            <Text weight={500} color={'green'} align='center'>Pricing</Text>
           </Card>
           <Card shadow={'md'}>
             <Text weight={500} color={'gray'} align='center'>FAQ</Text>

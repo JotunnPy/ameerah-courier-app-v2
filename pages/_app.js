@@ -1,6 +1,6 @@
 
 import Head from 'next/head';
-import { ActionIcon, Divider, Drawer, MantineProvider, Modal, Textarea, TextInput } from '@mantine/core';
+import { ActionIcon, BackgroundImage, Divider, Drawer, MantineProvider, Modal, Textarea, TextInput } from '@mantine/core';
 import { useState } from 'react'
 import {
     AppShell as Shell,
@@ -19,7 +19,9 @@ import {
     QuestionMark,
     Hourglass,
     CashBanknote,
-    PhoneCall
+    PhoneCall,
+    Moon,
+    Sun
 } from 'tabler-icons-react';
 import ALinkButton from '../Components/ALinkButton';
 
@@ -37,6 +39,8 @@ export default function App(props) {
 //Loading State
 
   const [colorScheme, setColorScheme] = useState('light')
+
+  const [actionColor, setActionColor] = useState('yellow')
   
 
   return (
@@ -96,6 +100,13 @@ export default function App(props) {
       }
       footer={
         <Footer  height={60} p="md" style={{background: ''}}>
+          <ActionIcon color={actionColor} onClick={()=>{
+            if(colorScheme == 'light'){
+              setColorScheme('dark')
+            }else{
+              setColorScheme('light')
+            }
+          }}>{colorScheme == 'light' ? <Moon></Moon> : <Sun></Sun>}</ActionIcon>
         </Footer>
       }
       header={
