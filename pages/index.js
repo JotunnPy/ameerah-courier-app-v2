@@ -43,7 +43,7 @@ function index() {
       {TEXTS[index % TEXTS.length]}
       </TextTransition>
       </Title>
-      <Title style={{color: 'green'}} order={1}>
+      <Title style={{color: 'red'}} order={1}>
       {" Delivery Service"}
       </Title>
       </Stack>

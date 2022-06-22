@@ -38,7 +38,7 @@ export default function App(props) {
 
 //Loading State
 
-  const [colorScheme, setColorScheme] = useState('light')
+  const [colorScheme, setColorScheme] = useState('dark')
 
   const [actionColor, setActionColor] = useState('yellow')
   
@@ -66,32 +66,32 @@ export default function App(props) {
           <Stack >
             <Divider />
               <ALinkButton title='Home' icon={<Home></Home>} options={{
-                from: 'white',
+                from: 'subtle',
                 to: 'filled'
               }} page='/'></ALinkButton>
 
               <ALinkButton icon={<QuestionMark></QuestionMark>} title='About' options={{
-                from: 'white',
+                from: 'subtle',
                 to: 'filled'
               }} page='/about'></ALinkButton>
 
               <ALinkButton icon={<PhoneCall></PhoneCall>} title='Contact' options={{
-                from: 'white',
+                from: 'subtle',
                 to: 'filled'
               }} page='/contact'></ALinkButton>
 
               <ALinkButton title='FAQ' icon={<Hourglass></Hourglass>} options={{
-                from: 'white',
+                from: 'subtle',
                 to: 'filled'
               }} page='/faq'></ALinkButton>
 
               <ALinkButton style={{}} icon={<CashBanknote></CashBanknote>} options={{
-                from: 'white',
+                from: 'subtle',
                 to: 'filled'
               }} title='Pricing' page='/pricing'></ALinkButton>
               <Stack>
                 <ALinkButton title='Log In' options={{
-                  from: 'white',
+                  from: 'subtle',
                   to: 'outline'
                 }}></ALinkButton>
               </Stack>
@@ -101,12 +101,12 @@ export default function App(props) {
       footer={
         <Footer  height={60} p="md" style={{background: ''}}>
           <ActionIcon color={actionColor} onClick={()=>{
-            if(colorScheme == 'light'){
-              setColorScheme('dark')
-            }else{
+            if(colorScheme == 'dark'){
               setColorScheme('light')
+            }else{
+              setColorScheme('dark')
             }
-          }}>{colorScheme == 'light' ? <Moon></Moon> : <Sun></Sun>}</ActionIcon>
+          }}>{colorScheme == 'dark' ? <Moon></Moon> : <Sun></Sun>}</ActionIcon>
         </Footer>
       }
       header={
