@@ -63,7 +63,7 @@ export default function App(props) {
       asideOffsetBreakpoint="sm"
       fixed
       navbar={
-          <Drawer  transition={'pop'} padding={'md'} title={<Title  p={'lg'}>Menu</Title>} onClose={()=>setOpened(false)} opened={opened}>
+          <Drawer  transition={'pop'} position={'right'} padding={'md'} title={<Title  p={'lg'}>Menu</Title>} onClose={()=>setOpened(false)} opened={opened}>
           <Stack >
             <Divider />
               <ALinkButton title='Home' icon={<Home></Home>} options={{
