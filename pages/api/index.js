@@ -1,9 +1,9 @@
 import { Group, SimpleGrid, Title, Text, Image, Card, useMantineTheme as MantineTheme, Badge, BackgroundImage, Stack , Modal, Button} from '@mantine/core'
 import {useState as UseState, useEffect as UseEffect} from 'react'
 import TextTransition, {presets} from 'react-text-transition'
-import AAnnouncement from '../Components/AAnnouncement'
-import ACard from '../Components/ACard'
-import ALinkButton from '../Components/ALinkButton'
+import AAnnouncement from '../../Components/AAnnouncement'
+import ACard from '../../Components/ACard'
+import ALinkButton from '../../Components/ALinkButton'
 
 const TEXTS = [
   "Fast",
@@ -27,7 +27,7 @@ function index() {
   const [o, setO] = UseState(false)
   return (
     <div>
-      <Group position='apart'><Title style={{marginBottom: 10, textShadow: '0px 0px 10px'}}>Home</Title>
+      <Group position='apart'><Title style={{marginBottom: 10}}>Home</Title>
       <Modal  onClose={()=>setO(false)} opened={o}>
         <Title style={{marginBottom: 10}}>Announcements</Title>
         <AAnnouncement  textTitle={'Website Release'} badgeTitle={'Info'} badgeColor={'blue'} addInfo={
