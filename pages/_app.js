@@ -1,6 +1,6 @@
 
 import Head from 'next/head';
-import { ActionIcon, BackgroundImage, Divider, Drawer, MantineProvider, Modal, Textarea, TextInput } from '@mantine/core';
+import { ActionIcon, BackgroundImage, Divider, Drawer, Group, MantineProvider, Modal, Textarea, TextInput } from '@mantine/core';
 import { useState } from 'react'
 import {
     AppShell as Shell,
@@ -24,6 +24,7 @@ import {
     Sun
 } from 'tabler-icons-react';
 import ALinkButton from '../Components/ALinkButton';
+import '../styles/home.css'
 
 //Export Values
 
@@ -111,16 +112,16 @@ export default function App(props) {
       }
       header={
         <Header height={70} p="md">
-          <div style={{ display: 'flex', alignItems: 'center', height: '100%' }}>
-              <Burger
+            <Group position='apart'>
+              
+          <Title align='center' order={2}>Ameerah Courier</Title>
+            <Burger
                 opened={opened}
                 onClick={() => setOpened((o) => !o)}
                 size="sm"
-                color={theme.colors.dark[6]}
                 mr="xl"
               />
-            <Title  order={3}>Ameerah Courier</Title>
-          </div>
+            </Group>
         </Header>
       }
     >

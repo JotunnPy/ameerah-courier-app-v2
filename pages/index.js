@@ -19,7 +19,7 @@ function index() {
   UseEffect(() => {
     const intervalId = setInterval(() =>
       setIndex(index => index + 1),
-      3000 // every 3 seconds
+      500 // every 3 seconds
     );
     return () => clearTimeout(intervalId);
   }, []);
@@ -27,7 +27,7 @@ function index() {
   const [o, setO] = UseState(false)
   return (
     <div>
-      <Group position='apart'><Title style={{marginBottom: 10}}>Home</Title>
+      <Group position='apart'><Title style={{marginBottom: 10, textShadow: '0px 0px 10px'}}>Home</Title>
       <Modal  onClose={()=>setO(false)} opened={o}>
         <Title style={{marginBottom: 10}}>Announcements</Title>
         <AAnnouncement  textTitle={'Website Release'} badgeTitle={'Info'} badgeColor={'blue'} addInfo={
@@ -36,14 +36,14 @@ function index() {
       </Modal>
       <Button color={'yellow'} variant={'filled'} onClick={()=>{setO(true)}}>Announcements</Button>
       </Group>
-      <Card shadow={'lg'} style={{marginBottom: 10}}>
+      <Card className='gradient' shadow={'lg'} style={{marginBottom: 10}} p='md'>
       <Stack spacing='xs'>
-      <Title style={{color: 'green'}} order={1}>
+      <Title style={{color:'white', textShadow: '0px 0px 10px'}} order={1}>
       <TextTransition inline springConfig={presets.wobbly}>
       {TEXTS[index % TEXTS.length]}
       </TextTransition>
       </Title>
-      <Title style={{color: 'red'}} order={1}>
+      <Title style={{color:'white', textShadow: '0px 0px 10px'}} order={1}>
       {" Delivery Service"}
       </Title>
       </Stack>
@@ -65,20 +65,17 @@ function index() {
           </>
         }></ACard>
       </SimpleGrid>
-      <SimpleGrid cols={2} style={{marginBottom: 5}}>
-        <ACard Body={
-          <>
-          
+      <SimpleGrid cols={2} style={{marginBottom: 10}}>
+        <Card className='gradient2'>
           <Group position='apart' style={{marginBottom: 5, marginTop: theme.spacing.sm}}>
-            <Text weight={500}>Our contacts</Text>
-            <Badge color={'red'} variant='light'>Contacts</Badge>
+            <Text weight={500} color='white'>Our contacts</Text>
+            <Badge color={'red'} variant='filled'>Contacts</Badge>
           </Group>
-          <Text style={{marginBottom: 5}} size='sm'>Our contact numbers, location and more!</Text>
+          <Text color='white' style={{marginBottom: 5}} size='sm'>Our contact numbers, location and more!</Text>
           <ALinkButton page='/contact' title='Contact Us Page' color='red' options={{
             from: 'filled', to: 'outline'
           }} fullWidth ={true}></ALinkButton>
-          </>
-        }></ACard>
+        </Card>
         <BackgroundImage radius={20} src={'https://images.unsplash.com/photo-1615840287214-7ff58936c4cf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80'}></BackgroundImage>
       </SimpleGrid>
       <SimpleGrid cols={2} style={{marginBottom: 5}}>
