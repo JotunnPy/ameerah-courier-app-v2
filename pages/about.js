@@ -1,9 +1,9 @@
-import { BackgroundImage, Card, Group ,SimpleGrid, Image, Title, Container, Button, ActionIcon, ThemeIcon, useMantineTheme, Text, Badge, Space, Divider } from '@mantine/core'
+import { BackgroundImage, Card, Group ,SimpleGrid, Image, Title, Container, Button, ActionIcon, ThemeIcon, useMantineTheme as MantineTheme, Text, Badge, Space, Divider } from '@mantine/core'
 import React from 'react'
 import {QuestionMark, ArrowDown} from 'tabler-icons-react'
 
 function about() {
-  const theme = useMantineTheme()
+  const theme = MantineTheme()
   return (
     <>
     <Card shadow={theme.shadows.xl}> 
