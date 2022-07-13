@@ -23,7 +23,7 @@ export default function App(props: AppProps) {
         withGlobalStyles
         withNormalizeCSS
         theme={{
-          colorScheme: 'light',
+          colorScheme: 'dark',
         }}
       >
         <AnimatePresence exitBeforeEnter>
@@ -39,11 +39,11 @@ export default function App(props: AppProps) {
                   </Title>
                   <MediaQuery smallerThan={'md'} styles={{display: 'none'}}>
                   <Group>
-                  <Link href={'/'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>Home</Button></motion.a></Link>
-                  <Link href={'/#shop'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>Shop</Button></motion.a></Link>
-                    <Link href={'/#about-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>About Us</Button></motion.a></Link>
-                    <Link href={'/#contact-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>Contact Us</Button></motion.a></Link>
-                    <motion.a whileHover={{scale: 1.2}}><Button variant='light'>Pricing</Button></motion.a>
+                  <Link href={'/'}><motion.a whileHover={{scale: 1.2}}><Button variant='default'>Home</Button></motion.a></Link>
+                  <Link href={'/#shop'}><motion.a whileHover={{scale: 1.2}}><Button variant='default'>Shop</Button></motion.a></Link>
+                    <Link href={'/#about-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='default'>About Us</Button></motion.a></Link>
+                    <Link href={'/#contact-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='default'>Contact Us</Button></motion.a></Link>
+                    <motion.a whileHover={{scale: 1.2}}><Button variant='default'>Pricing</Button></motion.a>
                   </Group>
                   </MediaQuery>
                   <Drawer position='left' size={'xs'} onClose={()=> setOpened(!opened)} opened={opened}>
