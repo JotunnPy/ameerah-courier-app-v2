@@ -4,12 +4,14 @@ import React from 'react'
 import ContactUs from '../components/home/contact'
 import FeaturesTitle from '../components/home/features'
 import Hero from '../components/home/hero'
+import Products from '../components/home/products'
 import { StatsRing } from '../components/home/stats'
 
 function index() {
   return (
     <>
     <Hero />
+    <Products />
     <Paper p={'md'}>
     <FeaturesTitle />
     <StatsRing data={[
