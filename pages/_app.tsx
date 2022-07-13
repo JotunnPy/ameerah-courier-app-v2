@@ -39,11 +39,11 @@ export default function App(props: AppProps) {
                   </Title>
                   <MediaQuery smallerThan={'md'} styles={{display: 'none'}}>
                   <Group>
-                  <Link href={'/'}><motion.a whileHover={{scale: 1.2}}><Button variant='filled'>Home</Button></motion.a></Link>
-                  <Link href={'/#shop'}><motion.a whileHover={{scale: 1.2}}><Button variant='filled'>Shop</Button></motion.a></Link>
-                    <Link href={'/#about-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='filled'>About Us</Button></motion.a></Link>
-                    <Link href={'/#contact-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='filled'>Contact Us</Button></motion.a></Link>
-                    <motion.a whileHover={{scale: 1.2}}><Button variant='filled'>Pricing</Button></motion.a>
+                  <Link href={'/'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>Home</Button></motion.a></Link>
+                  <Link href={'/#shop'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>Shop</Button></motion.a></Link>
+                    <Link href={'/#about-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>About Us</Button></motion.a></Link>
+                    <Link href={'/#contact-us'}><motion.a whileHover={{scale: 1.2}}><Button variant='light'>Contact Us</Button></motion.a></Link>
+                    <motion.a whileHover={{scale: 1.2}}><Button variant='light'>Pricing</Button></motion.a>
                   </Group>
                   </MediaQuery>
                   <Drawer position='left' size={'xs'} onClose={()=> setOpened(!opened)} opened={opened}>
