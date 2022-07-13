@@ -1,141 +1,48 @@
-import React from 'react';
-import { createStyles, Container, Title, Text, Button, SimpleGrid } from '@mantine/core';
-import { Truck, Certificate, Coin } from 'tabler-icons-react';
 
-const useStyles = createStyles((theme) => ({
-  root: {
-    backgroundColor: '#11284b',
-    backgroundSize: 'cover',
-    backgroundPosition: 'center',
-    backgroundImage:
-      'linear-gradient(250deg, rgba(130, 201, 30, 0) 0%, #062343 70%), url(https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1080&q=80)',
-    paddingTop: theme.spacing.xl * 3,
-    paddingBottom: theme.spacing.xl * 3,
-  },
+import {Card, Container, Group, Title, Button, Paper } from '@mantine/core'
+import React from 'react'
+import ContactUs from '../components/home/contact'
+import FeaturesTitle from '../components/home/features'
+import Hero from '../components/home/hero'
+import { StatsRing } from '../components/home/stats'
 
-  inner: {
-    display: 'flex',
-    justifyContent: 'space-between',
-
-    [theme.fn.smallerThan('md')]: {
-      flexDirection: 'column',
-    },
-  },
-
-  image: {
-    [theme.fn.smallerThan('md')]: {
-      display: 'none',
-    },
-  },
-
-  content: {
-    paddingTop: theme.spacing.xl * 2,
-    paddingBottom: theme.spacing.xl * 2,
-    marginRight: theme.spacing.xl * 3,
-
-    [theme.fn.smallerThan('md')]: {
-      marginRight: 0,
-    },
-  },
-
-  title: {
-    color: theme.white,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontWeight: 900,
-    lineHeight: 1.05,
-    maxWidth: 500,
-    fontSize: 48,
-
-    [theme.fn.smallerThan('md')]: {
-      maxWidth: '100%',
-      fontSize: 34,
-      lineHeight: 1.15,
-    },
-  },
-
-  description: {
-    color: theme.white,
-    opacity: 0.75,
-    maxWidth: 500,
-
-    [theme.fn.smallerThan('md')]: {
-      maxWidth: '100%',
-    },
-  },
-
-  control: {
-    paddingLeft: 50,
-    paddingRight: 50,
-    fontFamily: `Greycliff CF, ${theme.fontFamily}`,
-    fontSize: 22,
-
-    [theme.fn.smallerThan('md')]: {
-      width: '100%',
-    },
-  },
-  feature: {
-    position: 'relative',
-    paddingTop: theme.spacing.xl,
-    paddingLeft: theme.spacing.xl,
-  },
-
-  overlay: {
-    position: 'absolute',
-    height: 100,
-    width: 160,
-    top: 0,
-    left: 0,
-    backgroundColor:
-      theme.colorScheme === 'dark'
-        ? theme.fn.rgba(theme.colors[theme.primaryColor][7], 0.2)
-        : theme.colors[theme.primaryColor][0],
-    zIndex: 1,
-  },
-
-  icon: {
-    color: theme.colors[theme.primaryColor][theme.colorScheme === 'dark' ? 4 : 6],
-  },
-}));
-
-
-export default function HeroImageRight() {
-  const { classes } = useStyles();
+function index() {
   return (
     <>
-    <div className={classes.root}>
-      <Container size="lg">
-        <div className={classes.inner}>
-          <div className={classes.content}>
-            <Title className={classes.title}>
-              A{' '}
-              <Text
-                component="span"
-                inherit
-                variant="gradient"
-                gradient={{ from: 'pink', to: 'yellow' }}
-              >
-                Fast, Hassle-Free, Reasonably Priced 
-              </Text>{' '}
-              Delivery Services
-            </Title>
-
-            <Text className={classes.description} mt={30}>
-              With us, you can be rest assured that your package will be delivered fast and safetly.
-            </Text>
-
-            <Button
-              variant="gradient"
-              gradient={{ from: 'pink', to: 'yellow' }}
-              size="xl"
-              className={classes.control}
-              mt={40}
-            >
-              Get started
-            </Button>
-          </div>
-        </div>
-      </Container>
-    </div>
+    <Hero />
+    <Paper p={'md'}>
+    <FeaturesTitle />
+    <StatsRing data={[
+      {
+        label: 'Customers Served',
+        stats: '1000+',
+        progress: 60,
+        color: 'green',
+        icon: 'up'
+      },
+      {
+        label: 'Satisfactory Rate',
+        stats: '98%',
+        progress: 80,
+        color: 'teal',
+        icon: 'up'
+      },
+      {
+        label: 'Packages delivered on time',
+        stats: '100%',
+        progress: 100,
+        color: 'lightgreen',
+        icon: 'up'
+      }
+    ]} />
+    <br />
+    <br />
+    <br />
+    <br />
+    <ContactUs />
+    </Paper>
     </>
-  );
+  )
 }
+
+export default index

@@ -1,5 +1,5 @@
 {
-  "name": "ameerah-courier",
+  "name": "ameerah-courier-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,20 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mantine/core": "^4.2.9",
-    "@mantine/hooks": "^4.2.9",
-    "@mantine/next": "^4.2.9",
-    "@stripe/stripe-js": "^1.32.0",
-    "framer-motion": "^6.3.11",
-    "next": "^12.1.6",
+    "@mantine/core": "^4.2.12",
+    "@mantine/hooks": "^4.2.12",
+    "@mantine/next": "^4.2.12",
+    "framer-motion": "^6.4.3",
+    "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-intersection-observer": "^9.3.5",
+    "react-scroll-parallax": "^3.2.0",
     "react-text-transition": "^3.0.2",
-    "stripe": "^9.9.0",
-    "tabler-icons-react": "^1.49.0"
+    "tabler-icons-react": "^1.52.0"
   },
   "devDependencies": {
-    "eslint": "8.17.0",
-    "eslint-config-next": "12.1.6"
+    "@types/node": "18.0.3",
+    "@types/react": "18.0.15",
+    "@types/react-dom": "18.0.6",
+    "eslint": "8.19.0",
+    "eslint-config-next": "12.2.2",
+    "typescript": "4.7.4"
   }
 }

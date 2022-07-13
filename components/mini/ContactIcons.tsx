@@ -79,10 +79,10 @@ interface ContactIconsListProps {
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'hello@mantine.dev', icon: At },
-  { title: 'Phone', description: '+49 (800) 335 35 35', icon: Phone },
-  { title: 'Address', description: '844 Morris Park avenue', icon: MapPin },
-  { title: 'Working hours', description: '8 a.m. – 11 p.m.', icon: Sun },
+  { title: 'Email', description: 'Info@ameerahstarcourier.ca', icon: At },
+  { title: 'Phone', description: '587 888 7096', icon: Phone },
+  { title: 'Address', description: '32 Radcliffe Crescent SE #7106, Calgary, AB T2A 5W9, Canada', icon: MapPin },
+  { title: 'Working hours', description: '8 a.m. – 4 p.m.', icon: Sun },
 ];
 
 export function ContactIconsList({ data = MOCKDATA, variant }: ContactIconsListProps) {
@@ -90,7 +90,7 @@ export function ContactIconsList({ data = MOCKDATA, variant }: ContactIconsListP
   return <Group direction="column">{items}</Group>;
 }
 
-export  function Contacts() {
+export function ContactIcons() {
   return (
     <SimpleGrid cols={2} breakpoints={[{ maxWidth: 755, cols: 1 }]}>
       <Box
