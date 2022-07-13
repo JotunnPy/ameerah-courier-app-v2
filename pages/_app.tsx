@@ -32,8 +32,8 @@ export default function App(props: AppProps) {
           header={
               <Header p={'md'} height={70} style={{background: 'none', borderBottom: 'none'}}>
                 <Group position='apart'>
-                  <Title order={2} ml={0}>
-                      <Text style={{textShadow: '0px 0px 10px white'}} inherit>
+                  <Title order={2} ml={10}>
+                      <Text color={'white'} style={{textShadow: '0px 0px 10px black'}} inherit>
                         Ameerah
                       </Text>
                   </Title>
