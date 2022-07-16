@@ -11,7 +11,7 @@ const useStyles = createStyles((theme)=>({
         background: 'none',
         height: '150vh',
         zIndex: 1,
-        [theme.fn.smallerThan('md')]: {
+        [theme.fn.smallerThan('lg')]: {
             height: 'auto'
         }
     },

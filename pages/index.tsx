@@ -1,11 +1,13 @@
 
-import {Card, Container, Group, Title, Button, Paper } from '@mantine/core'
+import {Card, Container, Group, Title, Button, Paper, SimpleGrid, Text } from '@mantine/core'
 import React from 'react'
 import ContactUs from '../components/home/contact'
 import FeaturesTitle from '../components/home/features'
 import Hero from '../components/home/hero'
 import Products from '../components/home/products'
+import Review from '../components/home/Review'
 import { StatsRing } from '../components/home/stats'
+import Carousel from '../components/mini/Carousel'
 
 function index() {
   return (
@@ -37,6 +39,9 @@ function index() {
         icon: 'up'
       }
     ]} />
+    <br />
+    <br />
+    <Title mt={30} className='quotation' style={{color: 'white'}} align='center'>What do customers think about <br /> <Text component='span' variant='gradient' inherit gradient={{from: 'orange', to: 'red'}}>Ameerah Star</Text> ?</Title> 
     <br />
     <br />
     <br />

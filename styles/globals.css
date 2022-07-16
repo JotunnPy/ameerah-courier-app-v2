@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
 html,
 body {
   padding: 0;
@@ -26,3 +27,5 @@ a {
 .mantine-AppShell-main{
   padding-top: 0;
 }
+
+.quotation{font-family: 'Secular One', sans-serif;}
